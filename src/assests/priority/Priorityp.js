@@ -72,16 +72,15 @@ const Stitle = () => {
     return acc;
   }, {});
 
-  Object.keys(groupedByName).forEach(name => {
+  Object.keys(groupedByName).forEach((name) => {
     groupedByName[name].sort((a, b) => b.priority - a.priority);
-});
+  });
 
-console.log(groupedByName);
-
+  console.log(groupedByName);
 
   return (
     <div className="pTitles">
-       {Object.keys(groupedByName).length !== 0 && (
+      {Object.keys(groupedByName).length !== 0 && (
         <div className="cards" style={{ marginLeft: "2%" }}>
           <div className="headers">
             <div className="alens">
@@ -154,6 +153,7 @@ console.log(groupedByName);
           {3 in groupedByName
             ? groupedByName[3].map((user) => (
                 <div className="cardcs" key={user.id}>
+                
                   <div className="cardc1s">{user.id}</div>
                   <div className="cardc2s">{user.title}</div>
                   <div className="cardc3s">
@@ -225,8 +225,6 @@ console.log(groupedByName);
             : null}
         </div>
       )}
-
-     
     </div>
   );
 };

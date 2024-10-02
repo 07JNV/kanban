@@ -2,9 +2,13 @@ import { useEffect, useState } from "react";
 import "./User.css";
 import sm from "../icons/add.svg";
 import tdot from "../icons/3dot.svg";
-import Backlog from "../icons/Backlog.svg";
 import nop from "../icons/No-priority.svg";
 import Sta from "./Sta";
+import anoop from "../users/anoop.png";
+import ramesh from "../users/ramesh.png";
+import shankar from "../users/shankar.png";
+import suresh from "../users/suresh.png";
+import yogesh from "../users/yogesh.png";
 
 const Stitle = () => {
   const [data, setData] = useState({});
@@ -69,20 +73,20 @@ const Stitle = () => {
   console.log(groupedByName);
 
   return (
-    <div className="pTitleu">
+    <div className="ptitleu">
       {Object.keys(groupedByName).length !== 0 && (
         <div className="cardu" style={{ marginLeft: "2%" }}>
           <div className="headeru">
             <div className="alenu">
-              <img src={Backlog} alt="" />
+              <img className="user_img" src={anoop} alt="" />
               Anoop sharma{" "}
               {"Anoop sharma" in groupedByName
                 ? groupedByName["Anoop sharma"].length
                 : 0}
             </div>
             <div className="sdotu">
-              <img src={sm} alt="" style={{ width: "20px" }} />
-              <img src={tdot} alt="" style={{ width: "20px" }} />
+              <img className="other_img" src={sm} alt="" />
+              <img className="other_img" src={tdot} alt="" />
             </div>
           </div>
           {"Anoop sharma" in groupedByName
@@ -112,13 +116,13 @@ const Stitle = () => {
         <div className="cardu" style={{ marginLeft: "2%" }}>
           <div className="headeru">
             <div className="alenu">
-              <img src={Backlog} alt="" />
+              <img className="user_img" src={ramesh} alt="" />
               Ramesh{" "}
               {"Ramesh" in groupedByName ? groupedByName["Ramesh"].length : 0}
             </div>
             <div className="sdotu">
-              <img src={sm} alt="" />
-              <img src={tdot} alt="" />
+              <img className="other_img" src={sm} alt="" />
+              <img className="other_img" src={tdot} alt="" />
             </div>
           </div>
           {"Ramesh" in groupedByName
@@ -147,7 +151,7 @@ const Stitle = () => {
         <div className="cardu" style={{ marginLeft: "2%" }}>
           <div className="headeru">
             <div className="alenu">
-              <img src={Backlog} alt="" />
+              <img className="user_img" src={shankar} alt="" />
               Shankar Kumar{" "}
               {"Shankar Kumar" in groupedByName
                 ? groupedByName["Shankar Kumar"].length
@@ -184,7 +188,7 @@ const Stitle = () => {
         <div className="cardu" style={{ marginLeft: "2%" }}>
           <div className="headeru">
             <div className="alenu">
-              <img src={Backlog} alt="" />
+              <img className="user_img" src={suresh} alt="" />
               Suresh{" "}
               {"Suresh" in groupedByName ? groupedByName["Suresh"].length : 0}
             </div>
@@ -219,7 +223,7 @@ const Stitle = () => {
         <div className="cardu" style={{ marginLeft: "2%" }}>
           <div className="headeru">
             <div className="alenu">
-              <img src={Backlog} alt="" />
+              <img className="user_img" src={yogesh} alt="" />
               Yogesh{" "}
               {"Yogesh" in groupedByName ? groupedByName["Yogesh"].length : 0}
             </div>

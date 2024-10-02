@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./Parent_layout.css";
-import Ptitle from "./priority_title/Priority";
-import Stitle from "./status_title/Status"
+import Ptitle from "./priority/Priorityt";
+import Stitle from "./status/Statust"
 import down from "./icons/down.svg";
 import dis from "./icons/Display.svg"
-import Spriority from "./status_priority/Status"
-import Utitle from "./user_title/User"
-import Upriority from "./user_priority/User"
-import Ppriority from "./priority_priority/Priority"
+import Spriority from "./status/Statusp"
+import Utitle from "./user/Usertitle"
+import Upriority from "./user/Userp"
+import Ppriority from "./priority/Priorityp"
 
 const Parent = () => {
   const [group, setGroup] = useState("Status");
