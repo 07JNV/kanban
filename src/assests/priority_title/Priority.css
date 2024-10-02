@@ -1,0 +1,91 @@
+.pTitle {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 2%;
+}
+
+.cards {
+  width: 18.8%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cardc {
+  display: flex;
+  width: 84%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 -2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  font-size: 10px;
+  flex-direction: column;
+  padding-left:8%;
+  padding-right: 8%;
+  padding: 20px;
+  gap: 5px;
+}
+
+.status_logo{
+    width: 8%;
+    display: flex;
+    /* align-items: flex-start; */
+}
+
+.title{
+    font-size: 12px;
+    width: 80%;
+    display: flex;
+    height: auto;
+    /* align-items: flex-start; */
+}
+.cardc1 {
+  font-weight: 600;
+  font-size: 13px;
+  color: #808080;
+}
+
+.cardc2 {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 13px;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+}
+
+.cardc3 {
+  display: flex;
+  width: 40%;
+  color: #333;
+  font-size: 10px;
+  border: 2px solid rgba(128, 128, 128, 0.1);
+  border-radius: 2px;
+  text-align: center;
+  align-items: center;
+  padding: 0 10%;
+  /* align-items: ; */
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.alen {
+  width: 50%;
+  width: 50%;
+  display: flex;
+  gap: 3%;
+}
+
+.sdot {
+  width: 50%;
+  display: flex;
+  justify-content: right;
+  gap: 10%;
+}
