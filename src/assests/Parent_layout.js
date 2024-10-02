@@ -7,6 +7,7 @@ import dis from "./icons/Display.svg"
 import Spriority from "./status_priority/Status"
 import Utitle from "./user_title/User"
 import Upriority from "./user_priority/User"
+import Ppriority from "./priority_priority/Priority"
 
 const Parent = () => {
   const [group, setGroup] = useState("Status");
@@ -71,7 +72,7 @@ const Parent = () => {
         {group === "Status" && order == "Title" && <Stitle/>}
         {group === "User" && order === "Priority" && <Upriority/>}
         {group === "User" && order == "Title" && <Utitle/>}
-        {group === "Priority" && order === "Priority" && <h1>pp</h1>}
+        {group === "Priority" && order === "Priority" && <Ppriority/>}
         {group === "Priority" && order == "Title" && <Ptitle />}
       </div>
     </div>

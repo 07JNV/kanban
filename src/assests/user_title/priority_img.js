@@ -10,16 +10,19 @@ const Sta = ({ val }) => {
 
     useEffect(() => {
         switch (val) {
-            case "In progress":
+            case "0":
                 setIcon(inprogress);
                 break;
-            case "Todo":
+            case "1":
                 setIcon(todo);
                 break;
-            case "Backlog":
+            case "2":
                 setIcon(backlog);
                 break;
-            case "Done":
+            case "3":
+                setIcon(done);
+                break;
+            case "4":
                 setIcon(done);
                 break;
             default:

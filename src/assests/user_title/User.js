@@ -2,12 +2,6 @@ import { useEffect, useState } from "react";
 import "./User.css";
 import sm from "../icons/add.svg";
 import tdot from "../icons/3dot.svg";
-import todo from "../icons/To-do.svg";
-import inprogress from "../icons/in-progress.svg";
-import done from "../icons/Done.svg";
-import canceled from "../icons/Cancelled.svg";
-import medium from "../icons/Img - Medium Priority.svg";
-import low from "../icons/Img - Low Priority.svg";
 import Backlog from "../icons/Backlog.svg";
 import nop from "../icons/No-priority.svg";
 import Sta from "./Sta";
@@ -58,14 +52,6 @@ const Stitle = () => {
       setGroupData(mergedArray);
     }
   }, [data]);
-//   let dynamicArrayOfArrays = [[], [], [], [], []];
-//   const ticketArray = Object.values(groupedData);
-
-//   ticketArray.forEach((ticket) => {
-//     const priority = ticket.priority;
-//     dynamicArrayOfArrays[priority].push(ticket);
-//   });
-//   console.log(dynamicArrayOfArrays);
 
   const groupedByName = groupedData.reduce((acc, person) => {
     const key = person.name;
@@ -76,156 +62,194 @@ const Stitle = () => {
     return acc;
   }, {});
 
-  Object.keys(groupedByName).forEach(name => {
+  Object.keys(groupedByName).forEach((name) => {
     groupedByName[name].sort((a, b) => a.title.localeCompare(b.title));
-});
+  });
 
-console.log(groupedByName);
-
-
+  console.log(groupedByName);
 
   return (
-    <div className="pTitles">
-       {Object.keys(groupedByName).length !== 0 && (
-        <div className="cards" style={{ marginLeft: "2%" }}>
-          <div className="headers">
-            <div className="alens">
-              <img src={Backlog} alt="" /> 
-               Anoop sharma {"Anoop sharma" in groupedByName ? groupedByName["Anoop sharma"].length : 0}
+    <div className="pTitleu">
+      {Object.keys(groupedByName).length !== 0 && (
+        <div className="cardu" style={{ marginLeft: "2%" }}>
+          <div className="headeru">
+            <div className="alenu">
+              <img src={Backlog} alt="" />
+              Anoop sharma{" "}
+              {"Anoop sharma" in groupedByName
+                ? groupedByName["Anoop sharma"].length
+                : 0}
             </div>
-            <div className="sdots">
-              <img src={sm} alt="" />
-              <img src={tdot} alt="" />
+            <div className="sdotu">
+              <img src={sm} alt="" style={{ width: "20px" }} />
+              <img src={tdot} alt="" style={{ width: "20px" }} />
             </div>
           </div>
           {"Anoop sharma" in groupedByName
             ? groupedByName["Anoop sharma"].map((user) => (
-                <div className="cardcs" key={user.id}>
-                  <div className="cardc1s">{user.id}</div>
-                  <div className="cardc2s"><Sta val={user.status}/>{user.title}</div>
-                  <div className="cardc3s">
+                <div className="cardcu" key={user.id}>
+                  <div className="cardc1u">{user.id}</div>
+                  <div className="cardc2u">
+                    <div className="status_logo1">
+                      {" "}
+                      <Sta val={user.status} />
+                    </div>
+                    <div className="titleu1"> {user.title}</div>
+                  </div>
+                  <div className="cardc3u">
                     <div className="status_logos">
                       <img style={{ width: "100%" }} src={nop} alt="" />
                     </div>
-                    <div className="titles">{user.tag[0]}</div>
+                    <div className="titleu">{user.tag[0]}</div>
                   </div>
                 </div>
               ))
             : null}
         </div>
-      )} 
-       {Object.keys(groupedByName).length !== 0 && (
-        <div className="cards" style={{ marginLeft: "2%" }}>
-          <div className="headers">
-            <div className="alens">
-              <img src={Backlog} alt="" /> 
-Ramesh {"Ramesh" in groupedByName ? groupedByName["Ramesh"].length : 0}
+      )}
+
+      {Object.keys(groupedByName).length !== 0 && (
+        <div className="cardu" style={{ marginLeft: "2%" }}>
+          <div className="headeru">
+            <div className="alenu">
+              <img src={Backlog} alt="" />
+              Ramesh{" "}
+              {"Ramesh" in groupedByName ? groupedByName["Ramesh"].length : 0}
             </div>
-            <div className="sdots">
+            <div className="sdotu">
               <img src={sm} alt="" />
               <img src={tdot} alt="" />
             </div>
           </div>
           {"Ramesh" in groupedByName
             ? groupedByName["Ramesh"].map((user) => (
-                <div className="cardcs" key={user.id}>
-                  <div className="cardc1s">{user.id}</div>
-                  <div className="cardc2s"><Sta val={user.status}/>{user.title}</div>
-                  <div className="cardc3s">
+                <div className="cardcu" key={user.id}>
+                  <div className="cardc1u">{user.id}</div>
+                  <div className="cardc2u">
+                    <div className="status_logo1">
+                      {" "}
+                      <Sta val={user.status} />
+                    </div>
+                    <div className="titleu1"> {user.title}</div>
+                  </div>
+                  <div className="cardc3u">
                     <div className="status_logos">
                       <img style={{ width: "100%" }} src={nop} alt="" />
                     </div>
-                    <div className="titles">{user.tag[0]}</div>
+                    <div className="titleu">{user.tag[0]}</div>
                   </div>
                 </div>
               ))
             : null}
         </div>
-      )} 
-       {Object.keys(groupedByName).length !== 0 && (
-        <div className="cards" style={{ marginLeft: "2%" }}>
-          <div className="headers">
-            <div className="alens">
-              <img src={Backlog} alt="" /> 
-          Shankar Kumar {"Shankar Kumar" in groupedByName ? groupedByName["Shankar Kumar"].length : 0}
+      )}
+      {Object.keys(groupedByName).length !== 0 && (
+        <div className="cardu" style={{ marginLeft: "2%" }}>
+          <div className="headeru">
+            <div className="alenu">
+              <img src={Backlog} alt="" />
+              Shankar Kumar{" "}
+              {"Shankar Kumar" in groupedByName
+                ? groupedByName["Shankar Kumar"].length
+                : 0}
             </div>
-            <div className="sdots">
+            <div className="sdotu">
               <img src={sm} alt="" />
               <img src={tdot} alt="" />
             </div>
           </div>
           {"Shankar Kumar" in groupedByName
             ? groupedByName["Shankar Kumar"].map((user) => (
-                <div className="cardcs" key={user.id}>
-                  <div className="cardc1s">{user.id}</div>
-                  <div className="cardc2s">{user.title}</div>
-                  <div className="cardc3s">
+                <div className="cardcu" key={user.id}>
+                  <div className="cardc1u">{user.id}</div>
+                  <div className="cardc2u">
+                    <div className="status_logo1">
+                      {" "}
+                      <Sta val={user.status} />
+                    </div>
+                    <div className="titleu1"> {user.title}</div>
+                  </div>
+                  <div className="cardc3u">
                     <div className="status_logos">
                       <img style={{ width: "100%" }} src={nop} alt="" />
                     </div>
-                    <div className="titles">{user.tag[0]}</div>
+                    <div className="titleu">{user.tag[0]}</div>
                   </div>
                 </div>
               ))
             : null}
         </div>
-      )} 
-       {Object.keys(groupedByName).length !== 0 && (
-        <div className="cards" style={{ marginLeft: "2%" }}>
-          <div className="headers">
-            <div className="alens">
-              <img src={Backlog} alt="" /> 
-          Suresh {"Suresh" in groupedByName ? groupedByName["Shankar Kumar"].length : 0}
+      )}
+      {Object.keys(groupedByName).length !== 0 && (
+        <div className="cardu" style={{ marginLeft: "2%" }}>
+          <div className="headeru">
+            <div className="alenu">
+              <img src={Backlog} alt="" />
+              Suresh{" "}
+              {"Suresh" in groupedByName ? groupedByName["Suresh"].length : 0}
             </div>
-            <div className="sdots">
+            <div className="sdotu">
               <img src={sm} alt="" />
               <img src={tdot} alt="" />
             </div>
           </div>
           {"Suresh" in groupedByName
             ? groupedByName["Suresh"].map((user) => (
-                <div className="cardcs" key={user.id}>
-                  <div className="cardc1s">{user.id}</div>
-                  <div className="cardc2s">{user.title}</div>
-                  <div className="cardc3s">
+                <div className="cardcu" key={user.id}>
+                  <div className="cardc1u">{user.id}</div>
+                  <div className="cardc2u">
+                    <div className="status_logo1">
+                      {" "}
+                      <Sta val={user.status} />
+                    </div>
+                    <div className="titleu1"> {user.title}</div>
+                  </div>
+                  <div className="cardc3u">
                     <div className="status_logos">
                       <img style={{ width: "100%" }} src={nop} alt="" />
                     </div>
-                    <div className="titles">{user.tag[0]}</div>
+                    <div className="titleu">{user.tag[0]}</div>
                   </div>
                 </div>
               ))
             : null}
         </div>
-      )} 
-       {Object.keys(groupedByName).length !== 0 && (
-        <div className="cards" style={{ marginLeft: "2%" }}>
-          <div className="headers">
-            <div className="alens">
-              <img src={Backlog} alt="" /> 
-          Yogesh {"Yogesh" in groupedByName ? groupedByName["Shankar Kumar"].length : 0}
+      )}
+      {Object.keys(groupedByName).length !== 0 && (
+        <div className="cardu" style={{ marginLeft: "2%" }}>
+          <div className="headeru">
+            <div className="alenu">
+              <img src={Backlog} alt="" />
+              Yogesh{" "}
+              {"Yogesh" in groupedByName ? groupedByName["Yogesh"].length : 0}
             </div>
-            <div className="sdots">
+            <div className="sdotu">
               <img src={sm} alt="" />
               <img src={tdot} alt="" />
             </div>
           </div>
           {"Yogesh" in groupedByName
             ? groupedByName["Yogesh"].map((user) => (
-                <div className="cardcs" key={user.id}>
-                  <div className="cardc1s">{user.id}</div>
-                  <div className="cardc2s">{user.title}</div>
-                  <div className="cardc3s">
+                <div className="cardcu" key={user.id}>
+                  <div className="cardc1u">{user.id}</div>
+                  <div className="cardc2u">
+                    <div className="status_logo1">
+                      {" "}
+                      <Sta val={user.status} />
+                    </div>
+                    <div className="titleu1"> {user.title}</div>
+                  </div>
+                  <div className="cardc3u">
                     <div className="status_logos">
                       <img style={{ width: "100%" }} src={nop} alt="" />
                     </div>
-                    <div className="titles">{user.tag[0]}</div>
+                    <div className="titleu">{user.tag[0]}</div>
                   </div>
                 </div>
               ))
             : null}
         </div>
-      )} 
+      )}
     </div>
   );
 };

@@ -54,10 +54,10 @@ const FetchByPtitle = () => {
       setGroupData(mergedArray);
     }
   }, [data]);
-  //   console.log(groupedData);
+ 
   let dynamicArrayOfArrays = [[], [], [], [], []];
   const ticketArray = Object.values(groupedData);
-  // console.log(data)
+  
 
   ticketArray.forEach((ticket) => {
     const priority = ticket.priority;

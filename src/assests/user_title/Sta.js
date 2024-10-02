@@ -23,9 +23,9 @@ const Sta = ({ val }) => {
                 setIcon(done);
                 break;
             default:
-                setIcon(null); // Optional: clear icon if val doesn't match
+                setIcon(null); 
         }
-    }, [val]); // Run effect when `val` changes
+    }, [val]); 
     console.log(val)
 
     return (
