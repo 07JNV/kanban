@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import done from "../icons/Done.svg";
 import todo from "../icons/To-do.svg";
 import inprogress from "../icons/in-progress.svg";
-import cancelled from "../icons/Cancelled.svg";
 import backlog from "../icons/Backlog.svg";
 
 const Sta = ({ val }) => {

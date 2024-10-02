@@ -2,14 +2,12 @@ import { useEffect, useState } from "react";
 import "./Status.css";
 import sm from "../icons/add.svg";
 import tdot from "../icons/3dot.svg";
-import todo from "../icons/To-do.svg";
 import inprogress from "../icons/in-progress.svg";
 import done from "../icons/Done.svg";
 import canceled from "../icons/Cancelled.svg";
-import medium from "../icons/Img - Medium Priority.svg";
-import low from "../icons/Img - Low Priority.svg";
 import Backlog from "../icons/Backlog.svg";
 import nop from "../icons/No-priority.svg";
+import { memo } from "react";
 
 const Stitle = () => {
   const [data, setData] = useState({});
@@ -75,20 +73,21 @@ const Stitle = () => {
     return acc;
   }, {});
 
-  Object.keys(groupedByName).forEach(name => {
+  Object.keys(groupedByName).forEach((name) => {
     groupedByName[name].sort((a, b) => a.title.localeCompare(b.title));
-});
+  });
 
-console.log(groupedByName);
+  console.log(groupedByName);
 
   return (
     <div className="pTitles">
-       {Object.keys(groupedByName).length !== 0 && (
+      {Object.keys(groupedByName).length !== 0 && (
         <div className="cards" style={{ marginLeft: "2%" }}>
           <div className="headers">
             <div className="alens">
               <img src={Backlog} alt="" />
-              Backlog {"Done" in groupedByName ? groupedByName["Done"].length : 0}
+              Backlog{" "}
+              {"Done" in groupedByName ? groupedByName["Done"].length : 0}
             </div>
             <div className="sdots">
               <img src={sm} alt="" />
@@ -146,7 +145,8 @@ console.log(groupedByName);
           <div className="headers">
             <div className="alens">
               <img src={inprogress} alt="" />
-              In Progress {"Done" in groupedByName ? groupedByName["Done"].length : 0}
+              In Progress{" "}
+              {"Done" in groupedByName ? groupedByName["Done"].length : 0}
             </div>
             <div className="sdots">
               <img src={sm} alt="" />
@@ -204,7 +204,8 @@ console.log(groupedByName);
           <div className="headers">
             <div className="alens">
               <img src={canceled} alt="" />
-              Cancelled {"Done" in groupedByName ? groupedByName["Done"].length : 0}
+              Cancelled{" "}
+              {"Done" in groupedByName ? groupedByName["Done"].length : 0}
             </div>
             <div className="sdots">
               <img src={sm} alt="" />
@@ -227,10 +228,8 @@ console.log(groupedByName);
             : null}
         </div>
       )}
-
-     
     </div>
   );
 };
 
-export default Stitle;
+export default memo(Stitle);

@@ -9,6 +9,7 @@ import ramesh from "../users/ramesh.png";
 import shankar from "../users/shankar.png";
 import suresh from "../users/suresh.png";
 import yogesh from "../users/yogesh.png";
+import { memo } from "react";
 
 const Stitle = () => {
   const [data, setData] = useState({});
@@ -258,4 +259,4 @@ const Stitle = () => {
   );
 };
 
-export default Stitle;
+export default memo(Stitle);

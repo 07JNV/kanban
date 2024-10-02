@@ -8,6 +8,7 @@ import high from "../icons/Img - High Priority.svg";
 import medium from "../icons/Img - Medium Priority.svg";
 import low from "../icons/Img - Low Priority.svg";
 import Sta from "./Sta";
+import { memo } from "react";
 
 const FetchByPtitle = () => {
   const [data, setData] = useState({});
@@ -189,4 +190,4 @@ const FetchByPtitle = () => {
   );
 };
 
-export default FetchByPtitle;
+export default memo(FetchByPtitle);

@@ -7,6 +7,7 @@ import urgent from "../icons/SVG - Urgent Priority colour.svg";
 import high from "../icons/Img - High Priority.svg";
 import medium from "../icons/Img - Medium Priority.svg";
 import low from "../icons/Img - Low Priority.svg";
+import { memo } from "react";
 
 const Stitle = () => {
   const [data, setData] = useState({});
@@ -229,4 +230,4 @@ const Stitle = () => {
   );
 };
 
-export default Stitle;
+export default memo(Stitle);

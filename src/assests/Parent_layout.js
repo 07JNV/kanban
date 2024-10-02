@@ -8,6 +8,7 @@ import Spriority from "./status/Statusp"
 import Utitle from "./user/Usertitle"
 import Upriority from "./user/Userp"
 import Ppriority from "./priority/Priorityp"
+import { memo } from "react";
 
 const Parent = () => {
   const [group, setGroup] = useState("Status");
@@ -69,14 +70,14 @@ const Parent = () => {
       </div>
       <div className="mb1c2">
         {group === "Status" && order === "Priority" && <Spriority/>}
-        {group === "Status" && order == "Title" && <Stitle/>}
+        {group === "Status" && order === "Title" && <Stitle/>}
         {group === "User" && order === "Priority" && <Upriority/>}
-        {group === "User" && order == "Title" && <Utitle/>}
+        {group === "User" && order === "Title" && <Utitle/>}
         {group === "Priority" && order === "Priority" && <Ppriority/>}
-        {group === "Priority" && order == "Title" && <Ptitle />}
+        {group === "Priority" && order === "Title" && <Ptitle />}
       </div>
     </div>
   );
 };
 
-export default Parent;
+export default memo(Parent);

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import done from "../icons/Done.svg";
 import todo from "../icons/To-do.svg";
 import inprogress from "../icons/in-progress.svg";
-import cancelled from "../icons/Cancelled.svg";
 import backlog from "../icons/Backlog.svg";
+import { memo } from "react";
 
 const Sta = ({ val }) => {
     const [icon, setIcon] = useState(null);
@@ -35,4 +35,4 @@ const Sta = ({ val }) => {
     );
 };
 
-export default Sta;
+export default memo(Sta);
